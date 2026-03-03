@@ -1,0 +1,85 @@
+-- Insert sample Epic notes for patient Barbara Robinson
+INSERT INTO public.clinician_notes (
+    patient_id, 
+    episode_id,
+    title, 
+    content, 
+    discipline, 
+    priority, 
+    tags, 
+    author_id,
+    created_at,
+    attachments,
+    linked_data_sources
+) VALUES 
+-- Nursing Assessment Note
+('418a353a-cc2b-401b-a403-73148307f4d5', 'de758249-b566-49ab-adf7-680e8f2700ce', 
+ 'Initial Nursing Assessment - CKD Management',
+ 'Patient admitted for chronic kidney disease management and home health services initiation. Vital signs stable: BP 142/88, HR 78, RR 18, Temp 98.6°F. Patient reports fatigue and decreased appetite over past 2 weeks. Edema noted in bilateral lower extremities (+2 pitting). Skin integrity intact, no signs of infection. Patient demonstrates good understanding of fluid restrictions and dietary modifications. Medication compliance reviewed - patient taking prescribed diuretics and ACE inhibitors as directed. Family support system strong with daughter available for assistance. Patient educated on daily weight monitoring and when to contact healthcare provider. Will continue to monitor renal function and fluid status closely.',
+ 'nursing',
+ 'normal',
+ ARRAY['chronic kidney disease', 'edema', 'fluid restrictions', 'medication compliance'],
+ NULL,
+ '2025-01-10 09:30:00',
+ '[]'::jsonb,
+ '{}'::uuid[]),
+
+-- Physical Therapy Note
+('418a353a-cc2b-401b-a403-73148307f4d5', 'de758249-b566-49ab-adf7-680e8f2700ce',
+ 'PT Initial Evaluation - Mobility Assessment',
+ 'Physical therapy evaluation completed for 32-year-old female with chronic kidney disease affecting mobility and functional capacity. Strength testing reveals 4/5 strength in bilateral lower extremities, 5/5 in upper extremities. Balance testing shows mild deficits with single leg stance <10 seconds bilaterally. Gait assessment demonstrates antalgic pattern with decreased stride length. Patient reports increased fatigue with prolonged standing/walking activities. Functional mobility: Independent with ambulation up to 100 feet before requiring rest. Stairs require use of handrail for support. Goals established for strengthening program and endurance training. Home exercise program provided focusing on lower extremity strengthening and balance activities. Will reassess in 1 week.',
+ 'physical_therapy',
+ 'normal',
+ ARRAY['mobility assessment', 'strength testing', 'balance deficits', 'exercise program'],
+ NULL,
+ '2025-01-09 14:15:00',
+ '[]'::jsonb,
+ '{}'::uuid[]),
+
+-- Case Management Note
+('418a353a-cc2b-401b-a403-73148307f4d5', 'de758249-b566-49ab-adf7-680e8f2700ce',
+ 'Care Coordination - Insurance Authorization Update',
+ 'Care coordination completed for continued home health services. Insurance authorization approved for 60-day certification period covering skilled nursing visits 3x weekly and physical therapy 2x weekly. Patient education materials provided regarding chronic kidney disease management, including dietary guidelines and fluid restrictions. Community resources discussed including local support groups for chronic kidney disease patients. Transportation assistance arranged for upcoming nephrology appointments. Family meeting scheduled for next week to discuss long-term care planning and disease progression. Will coordinate with nephrology team for medication adjustments as needed.',
+ 'case_management',
+ 'high',
+ ARRAY['insurance authorization', 'care coordination', 'community resources', 'family meeting'],
+ NULL,
+ '2025-01-08 11:45:00',
+ '[]'::jsonb,
+ '{}'::uuid[]),
+
+-- Occupational Therapy Note
+('418a353a-cc2b-401b-a403-73148307f4d5', 'de758249-b566-49ab-adf7-680e8f2700ce',
+ 'OT Assessment - ADL Evaluation',
+ 'Occupational therapy assessment completed focusing on activities of daily living and adaptive equipment needs. Patient demonstrates independence in most ADLs with some limitations noted in bathing due to fatigue and balance concerns. Shower chair and grab bars recommended for bathroom safety. Kitchen assessment reveals difficulty with prolonged standing for meal preparation - recommend adaptive equipment including reacher/grabber and lightweight cookware. Energy conservation techniques taught including pacing activities and scheduling rest periods. Patient receptive to recommendations and motivated to maintain independence. Home safety evaluation scheduled for next visit to assess fall risk factors.',
+ 'occupational_therapy',
+ 'normal',
+ ARRAY['ADL assessment', 'adaptive equipment', 'energy conservation', 'home safety'],
+ NULL,
+ '2025-01-07 10:20:00',
+ '[]'::jsonb,
+ '{}'::uuid[]),
+
+-- Social Work Note
+('418a353a-cc2b-401b-a403-73148307f4d5', 'de758249-b566-49ab-adf7-680e8f2700ce',
+ 'Psychosocial Assessment - Coping with Chronic Illness',
+ 'Social work assessment completed addressing psychosocial aspects of chronic kidney disease diagnosis. Patient expresses anxiety about disease progression and impact on family. Coping mechanisms include strong faith-based support system and close relationship with adult daughter. Financial concerns identified related to potential work limitations and medical expenses. Resources provided including information about disability benefits and financial assistance programs. Patient would benefit from counseling services to address anxiety and adjustment to chronic illness. Referral made to local mental health provider accepting patient''s insurance. Follow-up scheduled in 2 weeks to assess progress and provide continued support.',
+ 'social_work',
+ 'high',
+ ARRAY['psychosocial assessment', 'anxiety management', 'financial concerns', 'counseling referral'],
+ NULL,
+ '2025-01-06 13:30:00',
+ '[]'::jsonb,
+ '{}'::uuid[]),
+
+-- Clinical Coordination Note
+('418a353a-cc2b-401b-a403-73148307f4d5', 'de758249-b566-49ab-adf7-680e8f2700ce',
+ 'Interdisciplinary Team Meeting - Care Plan Update',
+ 'Weekly interdisciplinary team meeting held to review patient progress and update care plan. All disciplines report patient is progressing well with home health interventions. Nursing notes improved medication compliance and decreased edema. PT reports increased strength and improved functional mobility. OT recommendations for adaptive equipment being implemented with good results. Social work addressing psychosocial needs with appropriate referrals made. Plan of care updated to reflect current goals: continue skilled nursing for medication management and disease monitoring, continue PT for strength and endurance training, add OT for advanced ADL training and home safety evaluation. Target discharge to self-care in 4-6 weeks if continued progress maintained.',
+ 'clinical_coordination',
+ 'normal',
+ ARRAY['team meeting', 'care plan update', 'interdisciplinary coordination', 'discharge planning'],
+ NULL,
+ '2025-01-05 16:00:00',
+ '[]'::jsonb,
+ '{}'::uuid[]);

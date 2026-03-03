@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Foundational Colors */
+    --foundational-white: 0 0% 100%;
+    --foundational-black: 0 0% 0%;
+
+    /* Primary Magenta Palette */
+    --primary-magenta-50: 300 100% 98%;
+    --primary-magenta-100: 300 92% 95%;
+    --primary-magenta-200: 300 86% 90%;
+    --primary-magenta-300: 300 78% 83%;
+    --primary-magenta-400: 300 75% 73%;
+    --primary-magenta-500: 299 79% 61%;
+    --primary-magenta-600: 300 66% 49%;
+    --primary-magenta-700: 300 69% 38%;
+    --primary-magenta-800: 297 68% 36%;
+    --primary-magenta-900: 295 58% 28%;
+    --primary-magenta-950: 296 84% 16%;
+
+    /* Primary Green Palette */
+    --primary-green-50: 155 100% 95%;
+    --primary-green-100: 149 100% 89%;
+    --primary-green-200: 152 95% 81%;
+    --primary-green-300: 156 94% 67%;
+    --primary-green-400: 158 64% 52%;
+    --primary-green-500: 160 84% 39%;
+    --primary-green-600: 161 94% 30%;
+    --primary-green-700: 162 94% 24%;
+    --primary-green-800: 163 88% 20%;
+    --primary-green-900: 164 86% 16%;
+    --primary-green-950: 166 91% 9%;
+
+    /* Primary Viridian Palette */
+    --primary-viridian-50: 186 10% 84%;
+    --primary-viridian-100: 186 12% 69%;
+    --primary-viridian-200: 188 14% 56%;
+    --primary-viridian-300: 190 17% 41%;
+    --primary-viridian-400: 193 21% 29%;
+    --primary-viridian-500: 188 47% 12%;
+    --primary-viridian-600: 189 39% 11%;
+    --primary-viridian-700: 190 32% 9%;
+    --primary-viridian-800: 193 32% 8%;
+    --primary-viridian-900: 195 36% 7%;
+    --primary-viridian-950: 200 36% 3%;
+
+    /* Neutral Gray Palette */
+    --neutral-gray-25: 0 0% 99%;
+    --neutral-gray-50: 0 0% 98%;
+    --neutral-gray-100: 0 0% 96%;
+    --neutral-gray-200: 214 11% 91%;
+    --neutral-gray-300: 213 9% 83%;
+    --neutral-gray-400: 220 9% 68%;
+    --neutral-gray-500: 220 9% 46%;
+    --neutral-gray-600: 220 13% 37%;
+    --neutral-gray-700: 222 13% 31%;
+    --neutral-gray-800: 222 21% 19%;
+    --neutral-gray-900: 222 34% 14%;
+    --neutral-gray-950: 222 45% 7%;
+
+    /* Error Palette */
+    --error-50: 6 93% 98%;
+    --error-100: 5 86% 95%;
+    --error-200: 5 78% 90%;
+    --error-300: 6 77% 80%;
+    --error-400: 6 76% 68%;
+    --error-500: 4 76% 58%;
+    --error-600: 4 72% 51%;
+    --error-700: 4 66% 43%;
+    --error-800: 4 64% 40%;
+    --error-900: 6 78% 57%;
+    --error-950: 15 75% 28%;
+
+    /* Semantic Color Mapping */
+    --background: var(--neutral-gray-25);
+    --foreground: var(--neutral-gray-900);
+
+    --card: var(--foundational-white);
+    --card-foreground: var(--neutral-gray-900);
+
+    --popover: var(--foundational-white);
+    --popover-foreground: var(--neutral-gray-900);
+
+    /* Primary Magenta for AI/Brand */
+    --primary: var(--primary-magenta-600);
+    --primary-foreground: var(--foundational-white);
+    
+    --secondary: var(--neutral-gray-100);
+    --secondary-foreground: var(--neutral-gray-900);
+
+    --muted: var(--neutral-gray-100);
+    --muted-foreground: var(--neutral-gray-500);
+
+    /* Primary Green for Actions */
+    --accent: var(--primary-green-600);
+    --accent-foreground: var(--foundational-white);
+
+    /* Error System */
+    --destructive: var(--error-600);
+    --destructive-foreground: var(--foundational-white);
+
+    /* UI Elements */
+    --border: var(--neutral-gray-200);
+    --input: var(--neutral-gray-200);
+    --ring: var(--primary-magenta-600);
+
+    --radius: 0.5rem;
+
+    /* AI Interface Colors */
+    --ai-primary: var(--primary-magenta-600);
+    --ai-secondary: var(--primary-magenta-200);
+    --ai-accent: var(--primary-magenta-50);
+    
+    /* Kouper Color Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary-magenta-600)), hsl(var(--primary-magenta-500)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--primary-green-600)), hsl(var(--primary-green-500)));
+    --gradient-clinical: linear-gradient(180deg, hsl(var(--neutral-gray-25)), hsl(var(--neutral-gray-50)));
+    --gradient-risk: linear-gradient(135deg, hsl(var(--error-600)), hsl(var(--error-500)));
+    
+    /* Shadows and Effects */
+    --shadow-clinical: 0 1px 3px hsl(var(--neutral-gray-900) / 0.08), 0 1px 2px hsl(var(--neutral-gray-900) / 0.12);
+    --shadow-elevated: 0 4px 6px hsl(var(--neutral-gray-900) / 0.05), 0 2px 4px hsl(var(--neutral-gray-900) / 0.08);
+    --shadow-ai: 0 8px 25px hsl(var(--primary-magenta-600) / 0.15);
+    
+    /* Animation Timing */
+    --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    /* Kouper AI Viridian Sidebar */
+    --sidebar-background: 188 54% 13%;
+    --sidebar-foreground: var(--foundational-white);
+    --sidebar-primary: var(--foundational-white);
+    --sidebar-primary-foreground: var(--primary-viridian-600);
+    --sidebar-accent: var(--primary-viridian-500);
+    --sidebar-accent-foreground: var(--foundational-white);
+    --sidebar-border: var(--primary-viridian-500);
+    --sidebar-ring: var(--primary-magenta-600);
+    --sidebar-hover: 188 56% 24%;
+    --sidebar-active: 188 56% 24%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
